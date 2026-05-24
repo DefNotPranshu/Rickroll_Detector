@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickroll Detector</title>
+    <style>
+        /* Base page styling */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Prevents scrollbars */
+        }
 
+        /* The blurred Rick Astley background */
+        .bg-image {
+            background-image: url("https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg");
+            filter: blur(8px) brightness(0.4); /* Blurs and darkens the image */
+            -webkit-filter: blur(8px) brightness(0.4);
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+        }
+
+        /* Center everything on the screen */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Makes text pop against background */
+        }
+
+        /* Styling for the input and button side-by-side */
+        .input-group {
+            display: flex;
+            gap: 5px;
+        }
+
+        input {
+            padding: 8px 12px;
+            width: 350px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: white;
+            color: black;
+            font-size: 15px;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    
+    <div class="container">
+        <h1>Rickroll Detector</h1>
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder="https://news.rr.nihalnavath.com/posts/Top">
+            <button id="checkButton">Is this a Rickroll?</button>
+        </div>
+    </div>
+
+    <script>
+        // The Trap
+        document.getElementById('checkButton').addEventListener('click', function() {
+            // The moment they click, send them straight to the video
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        });
+    </script>
+</body>
+</html>
